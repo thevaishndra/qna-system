@@ -1,4 +1,4 @@
-import {Permission} from "node-appwrite"
+import {Permission, IndexType} from "node-appwrite"
 
 import {db, questionCollection} from "../name"
 import {databases} from "./config"
@@ -57,25 +57,22 @@ export default async function createQuestionCollection(){
     ]);
     console.log("Question Attributes created")
 
-    //create Indexes
-    /*
-    await Promise.all([
-      databases.createIndex(
-        db,
-        questionCollection,
-        "title",
-        IndexType.Fulltext,
-        ["title"],
-        ['asc']
-      ),
-      databases.createIndex(
-        db,
-        questionCollection,
-        "content",
-        IndexType.Fulltext,
-        ["content"],
-        ['asc']
-      ),
-    ]);
-    */
+    // create Indexes
+    // await Promise.all([
+    //   databases.createIndex(
+    //     db,
+    //     questionCollection,
+    //     "titleIndex",
+    //     IndexType.Fulltext,
+    //     ["title"]
+    //   ),
+    //   databases.createIndex(
+    //     db,
+    //     questionCollection,
+    //     "contentIndex",
+    //     IndexType.Fulltext,
+    //     ["content"]
+    //   ),
+    // ]);
+
 }
