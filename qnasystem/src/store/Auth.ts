@@ -35,7 +35,7 @@ interface IAuthStore {
   logout(): Promise<void>
 }
 
-export const useAuthStore = create<IAuthStore>(){
+export const useAuthStore = create<IAuthStore>()(
     persist(
         immer((set) => ({
             session: null,
@@ -108,5 +108,5 @@ export const useAuthStore = create<IAuthStore>(){
             }
         }
     )
-}
+)
 
